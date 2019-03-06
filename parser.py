@@ -86,15 +86,23 @@ def parse_file( fname, points, transform, screen, color ):
             matrix_mult( transform, points )
             print_matrix( points )
             print_matrix( transform )
-            draw_lines( points, screen, color )
             
         elif line == "display":
+            clear_screen( screen )
+            draw_lines( points, screen, color )
             display( screen )
-            screen = new_screen()
             
         elif line == "save":
-            pass
+            clear_screen( screen )
+            draw_lines( points, screen, color )
+
+            fname = lines[count + 1].strip("\n")
+            save_extension( screen, fname )
+            
+        elif line == "quit":
+            break;
+
         else:
             pass
-            
+        
         count += 1

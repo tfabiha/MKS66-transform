@@ -49,7 +49,7 @@ def make_rotY( theta ):
     
 def make_rotZ( theta ):
     cost = math.cos(theta / 180.0 * math.pi)
-    sint = math.sin(-theta / 180.0 * math.pi)
+    sint = math.sin(theta / 180.0 * math.pi)
 
     return [
         [cost, sint, 0, 0],
